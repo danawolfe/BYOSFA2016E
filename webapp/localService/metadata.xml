@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0"
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="CRM_OPPORTUNITY" xml:lang="en" sap:schema-version="1"
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="Opportunity" sap:service-schema-version="5" sap:service-version="1" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Guid"/>
+                </Key>
+                <Property Name="Guid" Type="Edm.Guid" Nullable="false" sap:label="Object GUID" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Transaction No."/>
+                <Property Name="ProcessType" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Transaction Type"/>
+                <Property Name="Description" Type="Edm.String" MaxLength="40" m:FC_TargetPath="SyndicationTitle" m:FC_KeepInContent="true" sap:label="Description"/>
+                <Property Name="StartDate" Type="Edm.DateTime" Precision="0" sap:label="Start Date"/>
+                <Property Name="ClosingDate" Type="Edm.DateTime" Precision="0" sap:label="Closing Date"/>
+                <Property Name="ExpectedSalesVolume" Type="Edm.Decimal" Precision="8" Scale="2" sap:unit="CurrencyCode" sap:label="Expected Sales Vol."/>
+                <Property Name="TotalExpectedNetValue" Type="Edm.Decimal" Precision="15" Scale="2" sap:unit="CurrencyCode" sap:label="Exp.Total Value"/>
+                <Property Name="CurrencyCode" Type="Edm.String" MaxLength="5" sap:label="Currency" sap:semantics="currency-code"/>
+                <Property Name="SalesStageCode" Type="Edm.String" MaxLength="3" sap:label="Sales Stage"/>
+                <Property Name="SalesStageText" Type="Edm.String" MaxLength="40" sap:label="Description"/>
+                <Property Name="ChanceOfSuccess" Type="Edm.String" MaxLength="3" sap:label="Chance of Success %"/>
+                <Property Name="PriorityCode" Type="Edm.String" MaxLength="1" sap:label="Priority"/>
+                <Property Name="PriorityText" Type="Edm.String" MaxLength="60" sap:label="Priority"/>
+                <Property Name="ProspectNumber" Type="Edm.String" MaxLength="10" sap:label="Prospect"/>
+                <Property Name="ProspectName" Type="Edm.String" MaxLength="80" sap:label="Sales Prospect"/>
+                <Property Name="UserStatusCode" Type="Edm.String" MaxLength="5" sap:label="Status"/>
+                <Property Name="UserStatusText" Type="Edm.String" MaxLength="40" sap:label="User Status"/>
+                <Property Name="ForecastRelevance" Type="Edm.Boolean" sap:label="Rel. for Forecast"/>
+                <Property Name="MainContactId" Type="Edm.String" MaxLength="10" sap:label="Contact Pers."/>
+                <Property Name="MainContactName" Type="Edm.String" MaxLength="80" sap:label="Contact Person"/>
+                <Property Name="EmployeeResponsibleNumber" Type="Edm.String" MaxLength="10" sap:label="Employee Resp."/>
+                <Property Name="EmployeeResponsibleName" Type="Edm.String" MaxLength="80" sap:label="Person Responsible"/>
+                <Property Name="PredecessorID" Type="Edm.String" MaxLength="10" sap:label="Transaction No." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ProcessTypeDescription" Type="Edm.String" MaxLength="20" sap:label="Short Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ProcessTypeDescriptionLong" Type="Edm.String" MaxLength="40" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PredecessorGUID" Type="Edm.Guid" sap:label="Object GUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SalesOrganization" Type="Edm.String" MaxLength="14" sap:label="Sales Org. ID"/>
+                <Property Name="SalesOrganizationDescription" Type="Edm.String" MaxLength="40" sap:label="Sales Org Desc."/>
+                <Property Name="DistributionChannel" Type="Edm.String" MaxLength="2" sap:label="Distribution Channel"/>
+                <Property Name="DistributionChannelDescription" Type="Edm.String" MaxLength="40" sap:label="Distr.Chan.Desc"/>
+                <Property Name="Division" Type="Edm.String" MaxLength="2" sap:label="Division"/>
+                <Property Name="DivisionDescription" Type="Edm.String" MaxLength="40" sap:label="Division Desc."/>
+                <Property Name="Etag" Type="Edm.String" MaxLength="40" ConcurrencyMode="Fixed" sap:label="Hash Value" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="CRM_OPPORTUNITY_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="Opportunities" EntityType="CRM_OPPORTUNITY.Opportunity" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link rel="self" href="https://www.sapfioritrial.com/sap/opu/odata/sap/CRM_OPPORTUNITY/$metadata"
+                xmlns:atom="http://www.w3.org/2005/Atom"/>
+                <atom:link rel="latest-version" href="https://www.sapfioritrial.com/sap/opu/odata/sap/CRM_OPPORTUNITY/$metadata"
+                    xmlns:atom="http://www.w3.org/2005/Atom"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>
